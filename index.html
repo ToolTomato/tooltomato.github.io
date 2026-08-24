@@ -4,9 +4,9 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>ToolTomato — Free Online Tools</title>
+<title>ToolTomato — Smart Tools for Everyday Life</title>
 
-<meta name="description" content="ToolTomato provides fast, free and easy-to-use online tools for images, PDFs, calculators, students and everyday tasks.">
+<meta name="description" content="ToolTomato offers free calculators, government employee tools, student tools, business tools, image tools and everyday utilities.">
 
 <style>
 *{
@@ -16,13 +16,20 @@
 }
 
 :root{
-    --red:#ef3b3b;
-    --red-dark:#d92f2f;
-    --text:#171717;
-    --muted:#707070;
-    --bg:#fafafa;
-    --card:#ffffff;
-    --border:#e9e9e9;
+    --red:#ef3f3f;
+    --red2:#ff5b3d;
+    --orange:#ff8a3d;
+    --dark:#171b2b;
+    --text:#25283a;
+    --muted:#777b8c;
+    --bg:#fffaf2;
+    --white:#ffffff;
+    --line:#eee5d7;
+    --blue:#35a9df;
+}
+
+html{
+    scroll-behavior:smooth;
 }
 
 body{
@@ -37,631 +44,238 @@ a{
     color:inherit;
 }
 
+button,
+input{
+    font-family:inherit;
+}
+
 /* HEADER */
 
-header{
+.header{
     position:sticky;
     top:0;
-    z-index:100;
-    background:rgba(255,255,255,.94);
-    backdrop-filter:blur(12px);
-    border-bottom:1px solid var(--border);
+    z-index:1000;
+    background:rgba(255,250,242,.95);
+    backdrop-filter:blur(15px);
+    border-bottom:1px solid var(--line);
 }
 
 .nav{
-    max-width:1150px;
+    max-width:1180px;
+    height:74px;
     margin:auto;
-    height:72px;
-    padding:0 22px;
+    padding:0 20px;
     display:flex;
     align-items:center;
     justify-content:space-between;
 }
 
-.logo{
+.brand{
     display:flex;
     align-items:center;
-    gap:9px;
+    gap:10px;
+}
+
+.tomato{
+    width:43px;
+    height:43px;
+    border-radius:12px;
+    background:linear-gradient(145deg,#ff5a3c,#e52f35);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:27px;
+    box-shadow:0 6px 15px rgba(239,63,63,.22);
+}
+
+.brand-name{
     font-size:25px;
-    font-weight:800;
+    font-weight:900;
     letter-spacing:-1px;
+    color:var(--dark);
 }
 
-.logo-icon{
-    font-size:31px;
-}
-
-.logo span{
+.brand-name span{
     color:var(--red);
 }
 
 .nav-links{
     display:flex;
-    gap:28px;
     align-items:center;
-    font-size:15px;
-    font-weight:600;
+    gap:27px;
+    font-size:14px;
+    font-weight:700;
 }
 
 .nav-links a:hover{
     color:var(--red);
 }
 
-.nav-btn{
-    background:var(--red);
-    color:white;
-    padding:10px 18px;
-    border-radius:9px;
+.nav-cta{
+    background:var(--dark);
+    color:white!important;
+    padding:11px 18px;
+    border-radius:10px;
 }
 
-.nav-btn:hover{
-    background:var(--red-dark);
+.menu{
+    display:none;
+    font-size:29px;
+    cursor:pointer;
 }
 
 /* HERO */
 
 .hero{
-    max-width:1000px;
+    max-width:1180px;
     margin:auto;
+    padding:65px 20px 35px;
     text-align:center;
-    padding:80px 20px 55px;
 }
 
-.badge{
-    display:inline-block;
-    background:#fff0f0;
-    color:var(--red-dark);
-    border:1px solid #ffd4d4;
-    padding:7px 13px;
+.hero-badge{
+    display:inline-flex;
+    align-items:center;
+    gap:7px;
+    background:#fff0e5;
+    color:#df5632;
+    border:1px solid #ffd6bf;
+    padding:8px 15px;
     border-radius:50px;
     font-size:13px;
-    font-weight:700;
+    font-weight:800;
     margin-bottom:20px;
 }
 
 .hero h1{
-    font-size:clamp(40px,7vw,68px);
-    line-height:1.05;
-    letter-spacing:-3px;
-    max-width:800px;
+    max-width:850px;
     margin:auto;
+    font-size:clamp(42px,7vw,70px);
+    line-height:1.02;
+    letter-spacing:-3px;
+    color:var(--dark);
 }
 
 .hero h1 span{
-    color:var(--red);
+    background:linear-gradient(90deg,var(--red),var(--orange));
+    -webkit-background-clip:text;
+    color:transparent;
 }
 
-.hero p{
+.hero-text{
     max-width:650px;
-    margin:20px auto 28px;
+    margin:19px auto 28px;
     color:var(--muted);
-    font-size:18px;
+    font-size:17px;
 }
 
-.search{
-    max-width:650px;
+.search-box{
+    max-width:700px;
     margin:auto;
     position:relative;
 }
 
-.search input{
+.search-box input{
     width:100%;
-    height:60px;
-    padding:0 22px 0 52px;
-    border:1px solid #ddd;
-    border-radius:14px;
+    height:62px;
+    border:1px solid #e1d8ca;
     background:white;
+    border-radius:16px;
+    padding:0 55px 0 22px;
     font-size:16px;
     outline:none;
-    box-shadow:0 8px 30px rgba(0,0,0,.06);
+    box-shadow:0 12px 35px rgba(45,35,20,.07);
 }
 
-.search input:focus{
+.search-box input:focus{
     border-color:var(--red);
 }
 
 .search-icon{
     position:absolute;
-    left:19px;
-    top:18px;
-    font-size:22px;
+    right:21px;
+    top:17px;
+    font-size:25px;
+    color:#777;
 }
 
-/* SECTION */
+/* QUICK ACCESS */
 
 .section{
-    max-width:1150px;
+    max-width:1180px;
     margin:auto;
-    padding:35px 22px;
+    padding:28px 20px;
 }
 
-.section-head{
+.section-title{
     display:flex;
-    justify-content:space-between;
     align-items:end;
-    margin-bottom:22px;
+    justify-content:space-between;
+    margin-bottom:18px;
 }
 
-.section-head h2{
-    font-size:28px;
+.section-title h2{
+    font-size:27px;
     letter-spacing:-1px;
+    color:var(--dark);
 }
 
-.section-head p{
+.section-title p{
     color:var(--muted);
-    font-size:14px;
+    font-size:13px;
 }
 
-/* TOOLS */
-
-.tools{
+.quick-grid{
     display:grid;
-    grid-template-columns:repeat(3,1fr);
-    gap:18px;
+    grid-template-columns:repeat(4,1fr);
+    gap:14px;
 }
 
-.tool-card{
-    background:var(--card);
-    border:1px solid var(--border);
-    border-radius:17px;
-    padding:25px;
+.quick-card{
+    background:white;
+    border:1px solid var(--line);
+    border-radius:16px;
+    padding:19px;
+    display:flex;
+    align-items:center;
+    gap:15px;
     transition:.2s;
 }
 
-.tool-card:hover{
-    transform:translateY(-4px);
-    box-shadow:0 15px 35px rgba(0,0,0,.08);
-    border-color:#ddd;
+.quick-card:hover{
+    transform:translateY(-3px);
+    box-shadow:0 12px 30px rgba(40,30,15,.08);
 }
 
-.tool-icon{
-    width:52px;
-    height:52px;
+.quick-icon{
+    width:50px;
+    height:50px;
+    border-radius:13px;
+    background:#fff1df;
     display:flex;
     align-items:center;
     justify-content:center;
-    border-radius:13px;
-    background:#fff1f1;
-    font-size:27px;
-    margin-bottom:18px;
+    font-size:25px;
+    flex-shrink:0;
 }
 
-.tool-card h3{
-    font-size:18px;
-    margin-bottom:7px;
+.quick-card h3{
+    font-size:15px;
+    margin-bottom:3px;
 }
 
-.tool-card p{
+.quick-card p{
+    font-size:12px;
     color:var(--muted);
-    font-size:14px;
-    min-height:43px;
-    margin-bottom:18px;
-}
-
-.tool-link{
-    color:var(--red);
-    font-size:14px;
-    font-weight:700;
 }
 
 /* CATEGORIES */
 
 .categories{
     display:grid;
-    grid-template-columns:repeat(5,1fr);
-    gap:14px;
+    grid-template-columns:repeat(2,1fr);
+    gap:17px;
 }
 
 .category{
     background:white;
-    border:1px solid var(--border);
-    border-radius:14px;
-    padding:20px 12px;
-    text-align:center;
-    transition:.2s;
-}
-
-.category:hover{
-    border-color:var(--red);
-    transform:translateY(-3px);
-}
-
-.category div{
-    font-size:27px;
-    margin-bottom:8px;
-}
-
-.category strong{
-    font-size:14px;
-}
-
-/* WHY */
-
-.why{
-    margin-top:35px;
-    background:#171717;
-    color:white;
-    border-radius:22px;
-    padding:45px 30px;
-}
-
-.why h2{
-    font-size:30px;
-    margin-bottom:10px;
-}
-
-.why > p{
-    color:#aaa;
-    margin-bottom:28px;
-}
-
-.features{
-    display:grid;
-    grid-template-columns:repeat(4,1fr);
-    gap:20px;
-}
-
-.feature{
-    background:#222;
-    border:1px solid #333;
-    padding:20px;
-    border-radius:14px;
-}
-
-.feature-icon{
-    font-size:25px;
-    margin-bottom:10px;
-}
-
-.feature h3{
-    font-size:16px;
-    margin-bottom:5px;
-}
-
-.feature p{
-    color:#aaa;
-    font-size:13px;
-}
-
-/* FOOTER */
-
-footer{
-    margin-top:60px;
-    background:#111;
-    color:white;
-}
-
-.footer-inner{
-    max-width:1150px;
-    margin:auto;
-    padding:40px 22px;
-    display:flex;
-    justify-content:space-between;
-    gap:30px;
-}
-
-.footer-brand p{
-    color:#888;
-    font-size:14px;
-    margin-top:8px;
-}
-
-.footer-links{
-    display:flex;
-    gap:22px;
-    color:#aaa;
-    font-size:14px;
-}
-
-.footer-links a:hover{
-    color:white;
-}
-
-.copyright{
-    border-top:1px solid #292929;
-    text-align:center;
-    padding:18px;
-    color:#777;
-    font-size:13px;
-}
-
-/* MOBILE */
-
-@media(max-width:800px){
-
-    .nav-links{
-        display:none;
-    }
-
-    .hero{
-        padding-top:55px;
-    }
-
-    .hero h1{
-        letter-spacing:-2px;
-    }
-
-    .tools{
-        grid-template-columns:1fr 1fr;
-    }
-
-    .categories{
-        grid-template-columns:repeat(2,1fr);
-    }
-
-    .features{
-        grid-template-columns:1fr 1fr;
-    }
-
-    .footer-inner{
-        flex-direction:column;
-    }
-}
-
-@media(max-width:520px){
-
-    .nav{
-        height:64px;
-    }
-
-    .logo{
-        font-size:22px;
-    }
-
-    .hero{
-        padding:48px 18px 35px;
-    }
-
-    .hero h1{
-        font-size:42px;
-    }
-
-    .hero p{
-        font-size:16px;
-    }
-
-    .tools{
-        grid-template-columns:1fr;
-    }
-
-    .features{
-        grid-template-columns:1fr;
-    }
-
-    .section{
-        padding:28px 16px;
-    }
-
-    .section-head{
-        display:block;
-    }
-
-    .section-head p{
-        margin-top:5px;
-    }
-
-    .footer-links{
-        flex-wrap:wrap;
-    }
-}
-</style>
-</head>
-
-<body>
-
-<header>
-    <nav class="nav">
-
-        <a href="#" class="logo">
-            <span class="logo-icon">🍅</span>
-            Tool<span>Tomato</span>
-        </a>
-
-        <div class="nav-links">
-            <a href="#tools">Tools</a>
-            <a href="#categories">Categories</a>
-            <a href="#why">Why Us</a>
-            <a href="#tools" class="nav-btn">Explore Tools</a>
-        </div>
-
-    </nav>
-</header>
-
-<main>
-
-<section class="hero">
-
-    <div class="badge">🍅 100% Free Online Tools</div>
-
-    <h1>
-        Tools that make
-        <span>life easier.</span>
-    </h1>
-
-    <p>
-        Compress, convert, calculate and create —
-        simple tools for everyday tasks.
-    </p>
-
-    <div class="search">
-        <span class="search-icon">⌕</span>
-        <input type="text" placeholder="Search for a tool...">
-    </div>
-
-</section>
-
-
-<section class="section" id="tools">
-
-    <div class="section-head">
-        <div>
-            <h2>Popular Tools</h2>
-            <p>Quick solutions for everyday tasks</p>
-        </div>
-    </div>
-
-    <div class="tools">
-
-        <a href="#" class="tool-card">
-            <div class="tool-icon">📸</div>
-            <h3>Image Compressor</h3>
-            <p>Reduce image file size while keeping good quality.</p>
-            <div class="tool-link">Use tool →</div>
-        </a>
-
-        <a href="#" class="tool-card">
-            <div class="tool-icon">🖼️</div>
-            <h3>Image Resizer</h3>
-            <p>Resize images to your exact required dimensions.</p>
-            <div class="tool-link">Use tool →</div>
-        </a>
-
-        <a href="#" class="tool-card">
-            <div class="tool-icon">📄</div>
-            <h3>JPG to PDF</h3>
-            <p>Convert your images into PDF documents easily.</p>
-            <div class="tool-link">Use tool →</div>
-        </a>
-
-        <a href="#" class="tool-card">
-            <div class="tool-icon">🔢</div>
-            <h3>Percentage Calculator</h3>
-            <p>Calculate percentages quickly and accurately.</p>
-            <div class="tool-link">Use tool →</div>
-        </a>
-
-        <a href="#" class="tool-card">
-            <div class="tool-icon">🎂</div>
-            <h3>Age Calculator</h3>
-            <p>Find your exact age in years, months and days.</p>
-            <div class="tool-link">Use tool →</div>
-        </a>
-
-        <a href="#" class="tool-card">
-            <div class="tool-icon">💰</div>
-            <h3>EMI Calculator</h3>
-            <p>Calculate monthly EMI and total loan interest.</p>
-            <div class="tool-link">Use tool →</div>
-        </a>
-
-    </div>
-
-</section>
-
-
-<section class="section" id="categories">
-
-    <div class="section-head">
-        <div>
-            <h2>Browse Categories</h2>
-            <p>Find the right tool faster</p>
-        </div>
-    </div>
-
-    <div class="categories">
-
-        <a href="#tools" class="category">
-            <div>📸</div>
-            <strong>Image Tools</strong>
-        </a>
-
-        <a href="#tools" class="category">
-            <div>📄</div>
-            <strong>PDF Tools</strong>
-        </a>
-
-        <a href="#tools" class="category">
-            <div>🔢</div>
-            <strong>Calculators</strong>
-        </a>
-
-        <a href="#tools" class="category">
-            <div>🎓</div>
-            <strong>Student Tools</strong>
-        </a>
-
-        <a href="#tools" class="category">
-            <div>🤖</div>
-            <strong>AI Tools</strong>
-        </a>
-
-    </div>
-
-</section>
-
-
-<section class="section" id="why">
-
-    <div class="why">
-
-        <h2>Why ToolTomato?</h2>
-
-        <p>
-            Useful tools without unnecessary complications.
-        </p>
-
-        <div class="features">
-
-            <div class="feature">
-                <div class="feature-icon">⚡</div>
-                <h3>Fast</h3>
-                <p>Designed to get your task done quickly.</p>
-            </div>
-
-            <div class="feature">
-                <div class="feature-icon">🔒</div>
-                <h3>Privacy Friendly</h3>
-                <p>We aim to keep simple tools simple and secure.</p>
-            </div>
-
-            <div class="feature">
-                <div class="feature-icon">📱</div>
-                <h3>Mobile Friendly</h3>
-                <p>Works smoothly on phones, tablets and computers.</p>
-            </div>
-
-            <div class="feature">
-                <div class="feature-icon">🆓</div>
-                <h3>Free</h3>
-                <p>Useful online tools without a subscription.</p>
-            </div>
-
-        </div>
-
-    </div>
-
-</section>
-
-</main>
-
-
-<footer>
-
-    <div class="footer-inner">
-
-        <div class="footer-brand">
-            <div class="logo">
-                <span class="logo-icon">🍅</span>
-                Tool<span>Tomato</span>
-            </div>
-
-            <p>Simple tools. Big help.</p>
-        </div>
-
-        <div class="footer-links">
-            <a href="#">About</a>
-            <a href="#">Privacy</a>
-            <a href="#">Terms</a>
-            <a href="#">Contact</a>
-        </div>
-
-    </div>
-
-    <div class="copyright">
-        © 2026 ToolTomato. All rights reserved.
-    </div>
-
-</footer>
-
-</body>
-</html>
