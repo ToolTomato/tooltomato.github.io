@@ -1,223 +1,666 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>ToolTamato - Free Online Tools</title>
+<title>ToolTomato — Free Online Tools</title>
 
-    <meta name="description" content="ToolTamato - Free online tools for image, PDF, calculator and everyday tasks.">
+<meta name="description" content="ToolTomato provides fast, free and easy-to-use online tools for images, PDFs, calculators, students and everyday tasks.">
 
-    <style>
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
 
-        body {
-            font-family: Arial, sans-serif;
-            background: #f7f7f7;
-            color: #222;
-        }
+:root{
+    --red:#ef3b3b;
+    --red-dark:#d92f2f;
+    --text:#171717;
+    --muted:#707070;
+    --bg:#fafafa;
+    --card:#ffffff;
+    --border:#e9e9e9;
+}
 
-        header {
-            background: #ffffff;
-            padding: 18px 20px;
-            text-align: center;
-            border-bottom: 1px solid #ddd;
-        }
+body{
+    font-family:Arial,Helvetica,sans-serif;
+    background:var(--bg);
+    color:var(--text);
+    line-height:1.5;
+}
 
-        .logo {
-            font-size: 30px;
-            font-weight: bold;
-        }
+a{
+    text-decoration:none;
+    color:inherit;
+}
 
-        .logo span {
-            color: #e53935;
-        }
+/* HEADER */
 
-        header p {
-            margin-top: 6px;
-            color: #666;
-        }
+header{
+    position:sticky;
+    top:0;
+    z-index:100;
+    background:rgba(255,255,255,.94);
+    backdrop-filter:blur(12px);
+    border-bottom:1px solid var(--border);
+}
 
-        .hero {
-            text-align: center;
-            padding: 55px 20px 35px;
-        }
+.nav{
+    max-width:1150px;
+    margin:auto;
+    height:72px;
+    padding:0 22px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+}
 
-        .hero h1 {
-            font-size: 38px;
-            margin-bottom: 12px;
-        }
+.logo{
+    display:flex;
+    align-items:center;
+    gap:9px;
+    font-size:25px;
+    font-weight:800;
+    letter-spacing:-1px;
+}
 
-        .hero p {
-            color: #666;
-            font-size: 17px;
-        }
+.logo-icon{
+    font-size:31px;
+}
 
-        .search {
-            max-width: 600px;
-            margin: 25px auto;
-            display: flex;
-        }
+.logo span{
+    color:var(--red);
+}
 
-        .search input {
-            width: 100%;
-            padding: 15px;
-            border: 1px solid #ccc;
-            border-radius: 10px;
-            font-size: 16px;
-            outline: none;
-        }
+.nav-links{
+    display:flex;
+    gap:28px;
+    align-items:center;
+    font-size:15px;
+    font-weight:600;
+}
 
-        .container {
-            max-width: 1000px;
-            margin: auto;
-            padding: 20px;
-        }
+.nav-links a:hover{
+    color:var(--red);
+}
 
-        .section-title {
-            text-align: center;
-            margin: 25px 0;
-            font-size: 25px;
-        }
+.nav-btn{
+    background:var(--red);
+    color:white;
+    padding:10px 18px;
+    border-radius:9px;
+}
 
-        .tools {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            gap: 18px;
-        }
+.nav-btn:hover{
+    background:var(--red-dark);
+}
 
-        .tool {
-            background: white;
-            padding: 25px;
-            border-radius: 15px;
-            border: 1px solid #e5e5e5;
-            text-align: center;
-            transition: 0.2s;
-        }
+/* HERO */
 
-        .tool:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 8px 25px rgba(0,0,0,0.08);
-        }
+.hero{
+    max-width:1000px;
+    margin:auto;
+    text-align:center;
+    padding:80px 20px 55px;
+}
 
-        .icon {
-            font-size: 40px;
-            margin-bottom: 12px;
-        }
+.badge{
+    display:inline-block;
+    background:#fff0f0;
+    color:var(--red-dark);
+    border:1px solid #ffd4d4;
+    padding:7px 13px;
+    border-radius:50px;
+    font-size:13px;
+    font-weight:700;
+    margin-bottom:20px;
+}
 
-        .tool h3 {
-            margin-bottom: 8px;
-        }
+.hero h1{
+    font-size:clamp(40px,7vw,68px);
+    line-height:1.05;
+    letter-spacing:-3px;
+    max-width:800px;
+    margin:auto;
+}
 
-        .tool p {
-            color: #777;
-            font-size: 14px;
-            margin-bottom: 18px;
-        }
+.hero h1 span{
+    color:var(--red);
+}
 
-        .btn {
-            display: inline-block;
-            background: #e53935;
-            color: white;
-            padding: 10px 18px;
-            border-radius: 8px;
-            text-decoration: none;
-            font-weight: bold;
-        }
+.hero p{
+    max-width:650px;
+    margin:20px auto 28px;
+    color:var(--muted);
+    font-size:18px;
+}
 
-        footer {
-            margin-top: 50px;
-            padding: 25px;
-            background: #222;
-            color: white;
-            text-align: center;
-        }
+.search{
+    max-width:650px;
+    margin:auto;
+    position:relative;
+}
 
-        @media (max-width: 600px) {
-            .hero h1 {
-                font-size: 30px;
-            }
+.search input{
+    width:100%;
+    height:60px;
+    padding:0 22px 0 52px;
+    border:1px solid #ddd;
+    border-radius:14px;
+    background:white;
+    font-size:16px;
+    outline:none;
+    box-shadow:0 8px 30px rgba(0,0,0,.06);
+}
 
-            .tools {
-                grid-template-columns: 1fr;
-            }
-        }
-    </style>
+.search input:focus{
+    border-color:var(--red);
+}
+
+.search-icon{
+    position:absolute;
+    left:19px;
+    top:18px;
+    font-size:22px;
+}
+
+/* SECTION */
+
+.section{
+    max-width:1150px;
+    margin:auto;
+    padding:35px 22px;
+}
+
+.section-head{
+    display:flex;
+    justify-content:space-between;
+    align-items:end;
+    margin-bottom:22px;
+}
+
+.section-head h2{
+    font-size:28px;
+    letter-spacing:-1px;
+}
+
+.section-head p{
+    color:var(--muted);
+    font-size:14px;
+}
+
+/* TOOLS */
+
+.tools{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:18px;
+}
+
+.tool-card{
+    background:var(--card);
+    border:1px solid var(--border);
+    border-radius:17px;
+    padding:25px;
+    transition:.2s;
+}
+
+.tool-card:hover{
+    transform:translateY(-4px);
+    box-shadow:0 15px 35px rgba(0,0,0,.08);
+    border-color:#ddd;
+}
+
+.tool-icon{
+    width:52px;
+    height:52px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    border-radius:13px;
+    background:#fff1f1;
+    font-size:27px;
+    margin-bottom:18px;
+}
+
+.tool-card h3{
+    font-size:18px;
+    margin-bottom:7px;
+}
+
+.tool-card p{
+    color:var(--muted);
+    font-size:14px;
+    min-height:43px;
+    margin-bottom:18px;
+}
+
+.tool-link{
+    color:var(--red);
+    font-size:14px;
+    font-weight:700;
+}
+
+/* CATEGORIES */
+
+.categories{
+    display:grid;
+    grid-template-columns:repeat(5,1fr);
+    gap:14px;
+}
+
+.category{
+    background:white;
+    border:1px solid var(--border);
+    border-radius:14px;
+    padding:20px 12px;
+    text-align:center;
+    transition:.2s;
+}
+
+.category:hover{
+    border-color:var(--red);
+    transform:translateY(-3px);
+}
+
+.category div{
+    font-size:27px;
+    margin-bottom:8px;
+}
+
+.category strong{
+    font-size:14px;
+}
+
+/* WHY */
+
+.why{
+    margin-top:35px;
+    background:#171717;
+    color:white;
+    border-radius:22px;
+    padding:45px 30px;
+}
+
+.why h2{
+    font-size:30px;
+    margin-bottom:10px;
+}
+
+.why > p{
+    color:#aaa;
+    margin-bottom:28px;
+}
+
+.features{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:20px;
+}
+
+.feature{
+    background:#222;
+    border:1px solid #333;
+    padding:20px;
+    border-radius:14px;
+}
+
+.feature-icon{
+    font-size:25px;
+    margin-bottom:10px;
+}
+
+.feature h3{
+    font-size:16px;
+    margin-bottom:5px;
+}
+
+.feature p{
+    color:#aaa;
+    font-size:13px;
+}
+
+/* FOOTER */
+
+footer{
+    margin-top:60px;
+    background:#111;
+    color:white;
+}
+
+.footer-inner{
+    max-width:1150px;
+    margin:auto;
+    padding:40px 22px;
+    display:flex;
+    justify-content:space-between;
+    gap:30px;
+}
+
+.footer-brand p{
+    color:#888;
+    font-size:14px;
+    margin-top:8px;
+}
+
+.footer-links{
+    display:flex;
+    gap:22px;
+    color:#aaa;
+    font-size:14px;
+}
+
+.footer-links a:hover{
+    color:white;
+}
+
+.copyright{
+    border-top:1px solid #292929;
+    text-align:center;
+    padding:18px;
+    color:#777;
+    font-size:13px;
+}
+
+/* MOBILE */
+
+@media(max-width:800px){
+
+    .nav-links{
+        display:none;
+    }
+
+    .hero{
+        padding-top:55px;
+    }
+
+    .hero h1{
+        letter-spacing:-2px;
+    }
+
+    .tools{
+        grid-template-columns:1fr 1fr;
+    }
+
+    .categories{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .features{
+        grid-template-columns:1fr 1fr;
+    }
+
+    .footer-inner{
+        flex-direction:column;
+    }
+}
+
+@media(max-width:520px){
+
+    .nav{
+        height:64px;
+    }
+
+    .logo{
+        font-size:22px;
+    }
+
+    .hero{
+        padding:48px 18px 35px;
+    }
+
+    .hero h1{
+        font-size:42px;
+    }
+
+    .hero p{
+        font-size:16px;
+    }
+
+    .tools{
+        grid-template-columns:1fr;
+    }
+
+    .features{
+        grid-template-columns:1fr;
+    }
+
+    .section{
+        padding:28px 16px;
+    }
+
+    .section-head{
+        display:block;
+    }
+
+    .section-head p{
+        margin-top:5px;
+    }
+
+    .footer-links{
+        flex-wrap:wrap;
+    }
+}
+</style>
 </head>
 
 <body>
 
 <header>
-    <div class="logo">🍅 Tool<span>Tamato</span></div>
-    <p>Free online tools for everyone</p>
+    <nav class="nav">
+
+        <a href="#" class="logo">
+            <span class="logo-icon">🍅</span>
+            Tool<span>Tomato</span>
+        </a>
+
+        <div class="nav-links">
+            <a href="#tools">Tools</a>
+            <a href="#categories">Categories</a>
+            <a href="#why">Why Us</a>
+            <a href="#tools" class="nav-btn">Explore Tools</a>
+        </div>
+
+    </nav>
 </header>
 
+<main>
+
 <section class="hero">
-    <h1>Simple Tools. Big Help.</h1>
-    <p>Free tools for your everyday needs.</p>
+
+    <div class="badge">🍅 100% Free Online Tools</div>
+
+    <h1>
+        Tools that make
+        <span>life easier.</span>
+    </h1>
+
+    <p>
+        Compress, convert, calculate and create —
+        simple tools for everyday tasks.
+    </p>
 
     <div class="search">
-        <input type="text" placeholder="Search a tool...">
+        <span class="search-icon">⌕</span>
+        <input type="text" placeholder="Search for a tool...">
     </div>
+
 </section>
 
-<div class="container">
 
-    <h2 class="section-title">Popular Tools</h2>
+<section class="section" id="tools">
+
+    <div class="section-head">
+        <div>
+            <h2>Popular Tools</h2>
+            <p>Quick solutions for everyday tasks</p>
+        </div>
+    </div>
 
     <div class="tools">
 
-        <div class="tool">
-            <div class="icon">📸</div>
+        <a href="#" class="tool-card">
+            <div class="tool-icon">📸</div>
             <h3>Image Compressor</h3>
-            <p>Compress images and reduce file size easily.</p>
-            <a href="#" class="btn">Open Tool</a>
-        </div>
+            <p>Reduce image file size while keeping good quality.</p>
+            <div class="tool-link">Use tool →</div>
+        </a>
 
-        <div class="tool">
-            <div class="icon">🖼️</div>
+        <a href="#" class="tool-card">
+            <div class="tool-icon">🖼️</div>
             <h3>Image Resizer</h3>
-            <p>Resize your images quickly and easily.</p>
-            <a href="#" class="btn">Open Tool</a>
-        </div>
+            <p>Resize images to your exact required dimensions.</p>
+            <div class="tool-link">Use tool →</div>
+        </a>
 
-        <div class="tool">
-            <div class="icon">🔢</div>
-            <h3>Percentage Calculator</h3>
-            <p>Calculate percentages in seconds.</p>
-            <a href="#" class="btn">Open Tool</a>
-        </div>
-
-        <div class="tool">
-            <div class="icon">🎂</div>
-            <h3>Age Calculator</h3>
-            <p>Calculate your exact age instantly.</p>
-            <a href="#" class="btn">Open Tool</a>
-        </div>
-
-        <div class="tool">
-            <div class="icon">💰</div>
-            <h3>EMI Calculator</h3>
-            <p>Calculate monthly loan EMI easily.</p>
-            <a href="#" class="btn">Open Tool</a>
-        </div>
-
-        <div class="tool">
-            <div class="icon">📄</div>
+        <a href="#" class="tool-card">
+            <div class="tool-icon">📄</div>
             <h3>JPG to PDF</h3>
-            <p>Convert images into PDF files.</p>
-            <a href="#" class="btn">Open Tool</a>
+            <p>Convert your images into PDF documents easily.</p>
+            <div class="tool-link">Use tool →</div>
+        </a>
+
+        <a href="#" class="tool-card">
+            <div class="tool-icon">🔢</div>
+            <h3>Percentage Calculator</h3>
+            <p>Calculate percentages quickly and accurately.</p>
+            <div class="tool-link">Use tool →</div>
+        </a>
+
+        <a href="#" class="tool-card">
+            <div class="tool-icon">🎂</div>
+            <h3>Age Calculator</h3>
+            <p>Find your exact age in years, months and days.</p>
+            <div class="tool-link">Use tool →</div>
+        </a>
+
+        <a href="#" class="tool-card">
+            <div class="tool-icon">💰</div>
+            <h3>EMI Calculator</h3>
+            <p>Calculate monthly EMI and total loan interest.</p>
+            <div class="tool-link">Use tool →</div>
+        </a>
+
+    </div>
+
+</section>
+
+
+<section class="section" id="categories">
+
+    <div class="section-head">
+        <div>
+            <h2>Browse Categories</h2>
+            <p>Find the right tool faster</p>
+        </div>
+    </div>
+
+    <div class="categories">
+
+        <a href="#tools" class="category">
+            <div>📸</div>
+            <strong>Image Tools</strong>
+        </a>
+
+        <a href="#tools" class="category">
+            <div>📄</div>
+            <strong>PDF Tools</strong>
+        </a>
+
+        <a href="#tools" class="category">
+            <div>🔢</div>
+            <strong>Calculators</strong>
+        </a>
+
+        <a href="#tools" class="category">
+            <div>🎓</div>
+            <strong>Student Tools</strong>
+        </a>
+
+        <a href="#tools" class="category">
+            <div>🤖</div>
+            <strong>AI Tools</strong>
+        </a>
+
+    </div>
+
+</section>
+
+
+<section class="section" id="why">
+
+    <div class="why">
+
+        <h2>Why ToolTomato?</h2>
+
+        <p>
+            Useful tools without unnecessary complications.
+        </p>
+
+        <div class="features">
+
+            <div class="feature">
+                <div class="feature-icon">⚡</div>
+                <h3>Fast</h3>
+                <p>Designed to get your task done quickly.</p>
+            </div>
+
+            <div class="feature">
+                <div class="feature-icon">🔒</div>
+                <h3>Privacy Friendly</h3>
+                <p>We aim to keep simple tools simple and secure.</p>
+            </div>
+
+            <div class="feature">
+                <div class="feature-icon">📱</div>
+                <h3>Mobile Friendly</h3>
+                <p>Works smoothly on phones, tablets and computers.</p>
+            </div>
+
+            <div class="feature">
+                <div class="feature-icon">🆓</div>
+                <h3>Free</h3>
+                <p>Useful online tools without a subscription.</p>
+            </div>
+
         </div>
 
     </div>
-</div>
+
+</section>
+
+</main>
+
 
 <footer>
-    <p>© 2026 ToolTamato. Free tools for everyone.</p>
+
+    <div class="footer-inner">
+
+        <div class="footer-brand">
+            <div class="logo">
+                <span class="logo-icon">🍅</span>
+                Tool<span>Tomato</span>
+            </div>
+
+            <p>Simple tools. Big help.</p>
+        </div>
+
+        <div class="footer-links">
+            <a href="#">About</a>
+            <a href="#">Privacy</a>
+            <a href="#">Terms</a>
+            <a href="#">Contact</a>
+        </div>
+
+    </div>
+
+    <div class="copyright">
+        © 2026 ToolTomato. All rights reserved.
+    </div>
+
 </footer>
 
 </body>
