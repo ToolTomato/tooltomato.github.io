@@ -1,115 +1,180 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#050507"><title>ToolTomato — Free Tools For Everyday Problems</title><style>
-:root{--bg:#050507;--card:#101017;--text:#f7f7fb;--muted:#687086;--line:#24252e;--p:#7770ff;--o:#ff822b}*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--text);font-family:Inter,system-ui,sans-serif}a{text-decoration:none;color:inherit}.wrap{width:min(1180px,calc(100% - 48px));margin:auto}header{height:78px;border-bottom:1px solid #191a22;background:#07070bd9;backdrop-filter:blur(16px);position:sticky;top:0;z-index:5}.nav{height:100%;display:flex;align-items:center;justify-content:space-between}.logo{display:flex;align-items:center;gap:10px;font-size:23px;font-weight:900}.mark{width:43px;height:43px;border-radius:13px;display:grid;place-items:center;background:linear-gradient(135deg,#8c55ff,#ed5988);font-size:22px}.logo b{color:#fff}.logo span{color:#ff7926}.links{display:flex;gap:28px;color:#969dad;font-size:13px}.links a:hover{color:#fff}.hero{text-align:center;padding:88px 0 72px;position:relative;overflow:hidden}.hero:before{content:"";position:absolute;width:520px;height:300px;background:#6630ff25;filter:blur(100px);top:-100px;left:50%;transform:translateX(-50%)}.pill{position:relative;display:inline-block;border:1px solid #2a2a31;background:#111116;border-radius:99px;padding:9px 16px;color:#aeb2c0;font-size:12px;letter-spacing:1px}.pill b{color:#ff8b32}h1{position:relative;font-size:clamp(46px,7vw,78px);line-height:.98;letter-spacing:-4px;margin:27px 0 20px}.grad{background:linear-gradient(90deg,#ff8b2c,#ff635f,#c85cff);-webkit-background-clip:text;background-clip:text;color:transparent}.hero p{position:relative;color:#747b8d;max-width:700px;margin:0 auto 35px;font-size:17px;line-height:1.65}.search{position:relative;max-width:680px;margin:auto;display:flex;align-items:center;background:#0f1017;border:1px solid #272833;border-radius:99px;padding:6px 7px 6px 20px}.search i{font-size:22px;color:#7f8799}.search input{flex:1;min-width:0;background:none;border:0;outline:0;color:#fff;padding:13px;font-size:15px}.search button{border:0;border-radius:99px;background:linear-gradient(135deg,#7169ff,#8b55ff);color:#fff;padding:12px 22px;font-weight:800}.section{padding:64px 0}.kicker{color:#8a83ff;letter-spacing:4px;font-size:12px;font-weight:900}.orange{color:#ff7d2a}.title{font-size:34px;letter-spacing:-1.5px;margin:10px 0 32px}.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}.card{min-height:270px;background:linear-gradient(145deg,#111118,#0e0f15);border:1px solid #24252e;border-radius:24px;padding:37px;position:relative;transition:.25s}.card:hover{transform:translateY(-5px);border-color:#454755;box-shadow:0 25px 70px #0008}.card:after{content:"↗";position:absolute;right:30px;top:26px;color:#59667c;font-size:22px}.icon{width:73px;height:73px;border-radius:18px;display:grid;place-items:center;font-size:30px;color:#8c84ff;background:#18182d;margin-bottom:43px}.oi{color:#ff8c3d;background:#2a1b17}.card h3{font-size:25px;letter-spacing:-.8px;margin:0 0 10px}.card p{font-size:17px;line-height:1.5;color:#657087;margin:0}.featured{border-color:#70411f;box-shadow:0 15px 60px #8c3d1115}.category .card{min-height:315px}.category .card h3{font-size:29px}.soon{font-size:10px;color:#626879;border:1px solid #2b2d37;border-radius:99px;padding:5px 8px;vertical-align:middle}.footer{border-top:1px solid #191a22;text-align:center;padding:60px 0;color:#5e6677}.footer b{color:#ff7d2a}.toast{position:fixed;bottom:24px;left:50%;transform:translate(-50%,20px);opacity:0;background:#fff;color:#111;padding:12px 18px;border-radius:12px;font-weight:800;font-size:13px;transition:.25s}.toast.show{opacity:1;transform:translate(-50%,0)}@media(max-width:800px){.wrap{width:calc(100% - 50px)}.links{display:none}.hero{padding:70px 0 50px}h1{font-size:48px;letter-spacing:-2.8px}.hero p{font-size:15px}.search button{display:none}.grid{grid-template-columns:1fr}.card{min-height:270px}.category .card{min-height:300px}.section{padding:55px 0}}@media(max-width:480px){header{height:68px}.logo{font-size:21px}.mark{width:39px;height:39px}.hero{padding-top:65px}.pill{font-size:10px}h1{font-size:45px}.title{font-size:30px}.card{border-radius:23px}}
-</style></head><body>
-<header><div class="wrap nav"><a class="logo" href="#"><span class="mark">✦</span><b>TOOL<span>TOMATO</span></b></a><nav class="links"><a href="#home">Home</a><a href="#tools">Tools</a><a href="#categories">Categories</a><a href="#about">About</a></nav></div></header>
-<main id="home"><section class="hero"><div class="wrap"><div class="pill">✦ &nbsp; <b>12+ FREE TOOLS</b> &nbsp;·&nbsp; NO LOGIN &nbsp;·&nbsp; NO LIMITS</div><h1>Free Tools For<br><span class="grad">Everyday Problems</span></h1><p>Calculators, AI writers, image generators — designed for Bharat. Fast, free, forever.</p><div class="search"><i>⌕</i><input id="q" placeholder="Search a tool... e.g. EMI, GST, BMI"><button onclick="go()">Search</button></div></div></section>
-<section class="section" id="tools"><div class="wrap"><div class="kicker orange">🔥 POPULAR</div><h2 class="title">Popular Tools</h2><div class="grid"><article class="card featured" data-n="emi"><div class="icon oi">▣</div><h3>EMI Calculator</h3><p>Calculate your monthly loan EMI with amortization chart.</p></article><article class="card" data-n="age"><div class="icon">▦</div><h3>Age Calculator</h3><p>Find your exact age in years, months, days.</p></article><article class="card" data-n="gst"><div class="icon oi">₹</div><h3>GST Calculator</h3><p>Compute GST inclusive/exclusive amounts instantly.</p></article><article class="card" data-n="percentage"><div class="icon">%</div><h3>Percentage Calculator</h3><p>Percentage of, increase/decrease, and reverse calc.</p></article></div></div></section>
-<section class="section" id="categories"><div class="wrap"><div class="kicker">EXPLORE BY CATEGORY</div><h2 class="title">All Tool Categories</h2><div class="grid category"><article class="card"><div class="icon oi">▣</div><h3>Calculators</h3><p>Numbers made simple</p></article><article class="card"><div class="icon">▧</div><h3>Image Tools <small class="soon">🔒 SOON</small></h3><p>Compress, resize, convert</p></article><article class="card"><div class="icon oi">▤</div><h3>PDF Tools <small class="soon">🔒 SOON</small></h3><p>Merge, split, compress</p></article><article class="card"><div class="icon">⌁</div><h3>Education Tools <small class="soon">🔒 SOON</small></h3><p>Study smarter, calculate faster</p></article><article class="card"><div class="icon oi">✦</div><h3>AI Tools <small class="soon">🔒 SOON</small></h3><p>Write, generate, create</p></article><article class="card"><div class="icon">↔</div><h3>Converters <small class="soon">🔒 SOON</small></h3><p>Units, currency, data and more</p></article></div></div></section>
-<section class="section" id="all"><div class="wrap"><div class="kicker orange">EVERY TOOL</div><h2 class="title">All 12 tools, one grid</h2><div class="grid" id="allgrid"><article class="card" data-n="emi"><div class="icon oi">▣</div><h3>EMI Calculator</h3><p>Calculate your monthly loan EMI with amortization chart.</p></article><article class="card" data-n="age"><div class="icon">▦</div><h3>Age Calculator</h3><p>Find your exact age in years, months, days.</p></article><article class="card" data-n="gst"><div class="icon oi">₹</div><h3>GST Calculator</h3><p>Compute GST inclusive/exclusive amounts instantly.</p></article><article class="card" data-n="percentage"><div class="icon">%</div><h3>Percentage Calculator</h3><p>Percentage of, increase/decrease, and reverse calc.</p></article><article class="card" data-n="unit"><div class="icon">⌁</div><h3>Unit Converter</h3><p>Convert length, weight, temperature and more.</p></article><article class="card" data-n="ai text"><div class="icon oi">✎</div><h3>AI Text Writer</h3><p>Blogs, captions, emails — generated in seconds.</p></article><article class="card" data-n="ai image"><div class="icon">▧</div><h3>AI Image Generator</h3><p>Turn any prompt into a stunning AI image.</p></article><article class="card" data-n="bmi"><div class="icon oi">♡</div><h3>BMI Calculator</h3><p>Check your Body Mass Index and health category.</p></article><article class="card" data-n="loan"><div class="icon">♜</div><h3>Loan Calculator</h3><p>Total interest and payment schedule for any loan.</p></article><article class="card" data-n="sip"><div class="icon oi">↗</div><h3>SIP Calculator</h3><p>Estimate mutual fund SIP returns over time.</p></article><article class="card" data-n="date"><div class="icon">▦</div><h3>Date Calculator</h3><p>Days between dates, add/subtract days.</p></article><article class="card" data-n="discount"><div class="icon oi">%</div><h3>Discount Calculator</h3><p>Sale price after discount % or flat off.</p></article></div></div></section></main>
-<footer class="footer" id="about">TOOL<b>TOMATO</b><br><small>Free tools for everyday problems · Built for everyone</small></footer><div class="toast" id="toast"></div><script>function toast(x){let t=document.getElementById('toast');t.textContent=x;t.classList.add('show');clearTimeout(window.x);window.x=setTimeout(()=>t.classList.remove('show'),2200)}function go(){let q=document.getElementById('q').value.toLowerCase().trim();if(!q){toast('Type EMI, GST, BMI or another tool');return}let a=[...document.querySelectorAll('#allgrid .card')],f=a.find(x=>(x.dataset.n||'').includes(q));document.getElementById('all').scrollIntoView({behavior:'smooth'});setTimeout(()=>{a.forEach(x=>x.style.outline='');if(f){f.style.outline='2px solid #ff7d2a';toast('Found: '+f.querySelector('h3').textContent)}else toast('No matching tool yet')},500)}</script></body></html>
-  clearTimeout(window.toastTimer); window.toastTimer=setTimeout(()=>t.classList.remove('show'),2200);
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ToolTomato — Free Tools For Everyday Problems</title>
+<meta name="description" content="Calculators, PDF tools, and image tools — free, fast, and built for everyday tasks. No login, no limits.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://tooltomato.in/">
+
+<!-- Open Graph / social preview -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="ToolTomato — Free Tools For Everyday Problems">
+<meta property="og:description" content="Calculators, PDF tools, and image tools — free and fast for everyday tasks.">
+<meta property="og:url" content="https://tooltomato.in/">
+<meta name="twitter:card" content="summary">
+
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%23A96CFF'/%3E%3Cstop offset='1' stop-color='%23FF7A3D'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='24' height='24' rx='6' fill='url(%23g)'/%3E%3C/svg%3E">
+<meta name="theme-color" content="#0A0A0E">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "ToolTomato",
+  "url": "https://tooltomato.in/",
+  "description": "Free calculators, PDF tools, and image tools for everyday tasks."
 }
-function runSearch(){
-  const q=document.getElementById('toolSearch').value.trim();
-  if(!q){showToast('Type a tool name to search');return}
-  const cards=[...document.querySelectorAll('.tool-card')];
-  const match=cards.find(c=>c.dataset.name.includes(q.toLowerCase()));
-  document.getElementById('tools').scrollIntoView({behavior:'smooth'});
-  if(match){match.style.outline='3px solid #8a79ff';setTimeout(()=>match.style.outline='',1800);showToast('Tool found: '+match.querySelector('h3').textContent)}
-  else showToast('No demo tool found — more tools coming soon');
-}
-function filterTools(q){
-  const term=q.toLowerCase().trim();
-  document.querySelectorAll('.tool-card').forEach(c=>c.style.display=(!term||c.dataset.name.includes(term))?'block':'none');
-}
-document.getElementById('themeBtn').addEventListener('click',()=>{
-  document.body.classList.toggle('dark');
-  const dark=document.body.classList.contains('dark');
-  document.documentElement.style.setProperty('--bg',dark?'#0f1220':'#fff');
-  document.documentElement.style.setProperty('--surface',dark?'#171a2a':'#fff');
-  document.documentElement.style.setProperty('--text',dark?'#f5f6ff':'#14213d');
-  document.documentElement.style.setProperty('--muted',dark?'#aab0c2':'#667085');
-  showToast(dark?'Dark mode on':'Light mode on');
-});
 </script>
+
+<!--
+  MONETIZATION SETUP NOTES (remove this comment block before publishing):
+  1. Replace https://tooltomato.in/ everywhere with your real domain.
+  2. Google AdSense: after approval, paste your AdSense script in <head> and
+     replace the .ad-slot placeholders below with your real <ins class="adsbygoogle"> units.
+  3. Google Analytics / Search Console: add your GA4 snippet in <head> and verify
+     the domain in Search Console, then submit sitemap.xml.
+  4. Create an ads.txt file at the domain root with the line AdSense gives you
+     after you're approved (cannot be generated without your publisher ID).
+  5. Update the email addresses in contact.html and the legal pages to your own.
+-->
+</head>
+
+<body>
+
+<svg style="display:none">
+<symbol id="i-sparkle" viewBox="0 0 24 24"><path d="M12 2l1.8 5.2L19 9l-5.2 1.8L12 16l-1.8-5.2L5 9l5.2-1.8L12 2z"/><path d="M19 15l.7 1.9L22 18l-2.3.8-.7 1.9-.7-1.9L16 18l2.3-.8.7-1.9z"/></symbol>
+<symbol id="i-search" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></symbol>
+<symbol id="i-arrow" viewBox="0 0 24 24"><path d="M7 17L17 7"/><path d="M9 7h8v8"/></symbol>
+<symbol id="i-wallet" viewBox="0 0 24 24"><path d="M3 7a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V7z"/><path d="M16 12.2h3.2a1 1 0 0 1 1 1v1.6a1 1 0 0 1-1 1H16a1.8 1.8 0 0 1 0-3.6z"/></symbol>
+<symbol id="i-calendar" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="16" rx="2.5"/><path d="M3 10h18"/><path d="M8 3v4M16 3v4"/><circle cx="8" cy="14.5" r="1"/><circle cx="12" cy="14.5" r="1"/><circle cx="16" cy="14.5" r="1"/></symbol>
+<symbol id="i-rupee" viewBox="0 0 24 24"><path d="M6 4h11"/><path d="M6 8h11"/><path d="M6 4c4.2 0 6.5 1.4 6.5 4S10.2 12 6 12"/><path d="M6 12h4l7 8"/></symbol>
+<symbol id="i-percent" viewBox="0 0 24 24"><circle cx="7.5" cy="7.5" r="2.5"/><circle cx="16.5" cy="16.5" r="2.5"/><path d="M18 6L6 18"/></symbol>
+<symbol id="i-heart" viewBox="0 0 24 24"><path d="M12 20s-7-4.4-9-9c-1.5-3.5.7-7 4-7 2 0 3.5 1.3 5 3 1.5-1.7 3-3 5-3 3.3 0 5.5 3.5 4 7-2 4.6-9 9-9 9z"/></symbol>
+<symbol id="i-bank" viewBox="0 0 24 24"><path d="M12 3l9 5H3l9-5z"/><path d="M4 10h16"/><path d="M6 10v8M10 10v8M14 10v8M18 10v8"/><path d="M3 21h18"/></symbol>
+<symbol id="i-trending" viewBox="0 0 24 24"><path d="M3 17l6-6 4 4 8-8"/><path d="M15 7h6v6"/></symbol>
+<symbol id="i-percentoff" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M9 15l6-6"/><circle cx="9.4" cy="9.4" r="1.1"/><circle cx="14.6" cy="14.6" r="1.1"/></symbol>
+<symbol id="i-ruler" viewBox="0 0 24 24"><path d="M4 15v5h5"/><path d="M20 9V4h-5"/><path d="M4 20l6-6"/><path d="M20 4l-6 6"/></symbol>
+<symbol id="i-pen" viewBox="0 0 24 24"><path d="M12 20h9"/><path d="M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4 12.5-12.5z"/></symbol>
+<symbol id="i-image" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="16" rx="2.5"/><circle cx="9" cy="10" r="1.8"/><path d="M3 17l5.5-5.5a2 2 0 0 1 2.8 0L18 18"/></symbol>
+<symbol id="i-pdf" viewBox="0 0 24 24"><path d="M6 3h9l4 4v14a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1z"/><path d="M14 3v5h5"/></symbol>
+<symbol id="i-cap" viewBox="0 0 24 24"><path d="M2 9l10-5 10 5-10 5-10-5z"/><path d="M6 11.5v4c0 1.5 2.7 3 6 3s6-1.5 6-3v-4"/><path d="M22 9v6"/></symbol>
+<symbol id="i-chip" viewBox="0 0 24 24"><rect x="7" y="7" width="10" height="10" rx="1.5"/><path d="M9 3v2M12 3v2M15 3v2M9 19v2M12 19v2M15 19v2M3 9h2M3 12h2M3 15h2M19 9h2M19 12h2M19 15h2"/></symbol>
+<symbol id="i-calc" viewBox="0 0 24 24"><rect x="4" y="2" width="16" height="20" rx="2.5"/><path d="M8 6.5h8"/><circle cx="8" cy="11" r=".9"/><circle cx="12" cy="11" r=".9"/><circle cx="16" cy="11" r=".9"/><circle cx="8" cy="15" r=".9"/><circle cx="12" cy="15" r=".9"/><circle cx="16" cy="15" r=".9"/><circle cx="8" cy="19" r=".9"/><circle cx="12" cy="19" r=".9"/><circle cx="16" cy="19" r=".9"/></symbol>
+<symbol id="i-compress" viewBox="0 0 24 24"><path d="M9 3v4a1 1 0 0 1-1 1H4"/><path d="M15 3v4a1 1 0 0 0 1 1h4"/><path d="M9 21v-4a1 1 0 0 0-1-1H4"/><path d="M15 21v-4a1 1 0 0 1 1-1h4"/></symbol>
+<symbol id="i-merge" viewBox="0 0 24 24"><path d="M6 3v6a3 3 0 0 0 3 3h6a3 3 0 0 0 3-3V3"/><path d="M12 12v9"/><path d="M8.5 17.5L12 21l3.5-3.5"/></symbol>
+<symbol id="i-word" viewBox="0 0 24 24"><path d="M6 3h9l4 4v14a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1z"/><path d="M14 3v5h5"/><path d="M8 13h8M8 16.5h8M8 9.5h4"/></symbol>
+<symbol id="i-qr" viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14.5" y="14.5" width="2.5" height="2.5"/><rect x="18.5" y="14.5" width="2.5" height="2.5"/><rect x="14.5" y="18.5" width="2.5" height="2.5"/><rect x="18.5" y="18.5" width="2.5" height="2.5"/></symbol>
+</svg>
+
+<header>
+    <nav class="nav">
+        <a href="index.html" class="logo">
+            <span class="logo-mark"><svg class="icon"><use href="#i-sparkle"/></svg></span>
+            <span class="tool">TOOL</span><span class="tomato">TOMATO</span>
+        </a>
+        <div class="nav-links">
+            <a href="index.html#tools">Tools</a>
+            <a href="index.html#categories">Categories</a>
+            <a href="about.html">About</a>
+            <a href="contact.html">Contact</a>
+            <a href="index.html#tools" class="nav-btn">Explore</a>
+        </div>
+    </nav>
+</header>
+
+<main>
+
+<section class="hero">
+    <div class="pill"><svg class="icon"><use href="#i-sparkle"/></svg> 15+ FREE TOOLS · NO LOGIN · NO LIMITS</div>
+
+    <h1>Free Tools For<br><span class="grad">Everyday Problems</span></h1>
+
+    <p class="lead">Calculators, PDF tools, and image tools — designed to be fast, free, and simple.</p>
+
+    <div class="search">
+        <svg class="icon"><use href="#i-search"/></svg>
+        <input type="text" id="toolSearch" placeholder="Search a tool… e.g. EMI, GST, BMI">
+    </div>
+</section>
+
+<div class="ad-slot"><div class="ad-box">Advertisement slot — 728×90 / responsive</div></div>
+
+<section class="section" id="tools">
+
+    <div class="eyebrow orange">🔥 Popular</div>
+    <h2>Popular Tools</h2>
+
+    <div class="tool-list" id="popularGrid"></div>
+
+</section>
+
+
+<section class="section">
+
+    <div class="eyebrow orange">Every Tool</div>
+    <h2>All 15 tools, one grid</h2>
+
+    <div class="tool-list" id="allGrid"></div>
+
+    <div class="empty-state" id="emptyState">No tools match your search — try a different keyword.</div>
+
+</section>
+
+<div class="ad-slot"><div class="ad-box">Advertisement slot — 728×90 / responsive</div></div>
+
+<section class="section" id="categories">
+
+    <div class="eyebrow purple">Explore by category</div>
+    <h2>All Tool Categories</h2>
+
+    <div class="category-list" id="categoryList"></div>
+
+</section>
+
+</main>
+
+<footer>
+    <div class="footer-inner">
+        <div class="footer-logo">
+            <span class="logo-mark"><svg class="icon"><use href="#i-sparkle"/></svg></span>
+            <span class="tool">TOOL</span><span class="tomato">TOMATO</span>
+        </div>
+        <p class="tagline">Free tools for everyday problems · Built in India</p>
+
+        <div class="footer-links">
+            <a href="about.html">About</a>
+            <a href="privacy.html">Privacy Policy</a>
+            <a href="terms.html">Terms of Service</a>
+            <a href="disclaimer.html">Disclaimer</a>
+            <a href="contact.html">Contact</a>
+        </div>
+
+        <div class="footer-bottom">
+            <p>© <span id="year"></span> ToolTomato. All rights reserved.</p>
+            <p>Calculator results are for general guidance only and are not professional financial, medical, or legal advice.</p>
+        </div>
+    </div>
+</footer>
+
+<div class="cookie-banner" id="cookieBanner" role="dialog" aria-live="polite">
+    <p>We use cookies to run this site and to show relevant ads. See our <a href="privacy.html">Privacy Policy</a>.</p>
+    <div class="cookie-actions">
+        <button class="btn-ghost" id="cookieDecline">Decline</button>
+        <button class="btn" id="cookieAccept">Accept</button>
+    </div>
+</div>
+
+<script src="script.js"></script>
+
 </body>
-</html>    gap:30px;
-    align-items:center;
-    font-size:14.5px;
-    font-weight:500;
-}
-
-.nav-links a:not(.nav-btn){
-    position:relative;
-    color:var(--ink-soft);
-    padding-bottom:3px;
-}
-
-.nav-links a:not(.nav-btn)::after{
-    content:"";
-    position:absolute;
-    left:0; right:100%;
-    bottom:0;
-    height:2px;
-    background:var(--tomato);
-    transition:right .2s ease;
-}
-
-.nav-links a:not(.nav-btn):hover{ color:var(--ink); }
-.nav-links a:not(.nav-btn):hover::after{ right:0; }
-
-.nav-btn{
-    background:var(--ink);
-    color:#fff;
-    padding:10px 18px;
-    border-radius:8px;
-    font-family:var(--mono);
-    font-size:13px;
-    font-weight:500;
-    letter-spacing:.2px;
-    transition:background .15s ease, transform .15s ease;
-}
-
-.nav-btn:hover{ background:var(--tomato-deep); transform:translateY(-1px); }
-
-/* ============ HERO ============ */
-
-.hero{
-    position:relative;
-    max-width:1180px;
-    margin:auto;
-    padding:96px 24px 70px;
-    text-align:center;
-    overflow:hidden;
-}
-
-.hero::before{
-    content:"";
-    position:absolute;
-    inset:-40px -24px auto -24px;
-    height:520px;
-    background-image:radial-gradient(circle, #d9d0bd 1.4px, transparent 1.4px);
-    background-size:26px 26px;
-    -webkit-mask-image:radial-gradient(ellipse 60% 55% at 50% 30%, #000 40%, transparent 90%);
-    mask-image:radial-gradient(ellipse 60% 55% at 50% 30%, #000 40%, transparent 90%);
-    opacity:.7;
-    z-index:0;
-    pointer-events:none;
-}
-
-.hero > *{ position:relative; z-index:1; }
-
-.stamp{
-    display:inline-flex;
-    align-items:center;
-    gap:8px;
-    font-family:var(--mono);
-    font-size:12.5px;
-    font-weight:600;
-    letter-spacing:.4px;
-    color:var(--tomato-deep);
-    border:1.5px dashed #e3a9a3;
-    background:#fff6f5;
+</html>
     padding:8px 15px;
     border-radius:50px;
     margin-bottom:26px;
