@@ -1,115 +1,12 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="ToolTamato — smart, fast and free online tools for everyday problems.">
-<title>ToolTamato — One Place. Every Tool.</title>
-<style>
-:root{
-  --bg:#ffffff;--surface:#ffffff;--text:#14213d;--muted:#667085;--line:#e9ecf5;
-  --primary:#6657f5;--primary2:#8d5cf6;--soft:#f4f2ff;--shadow:0 16px 45px rgba(35,39,80,.10);
-}
-*{box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{margin:0;font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;color:var(--text);background:var(--bg)}
-a{text-decoration:none;color:inherit}
-button,input{font:inherit}
-.container{width:min(1180px,92%);margin:auto}
-
-/* Header */
-header{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.88);backdrop-filter:blur(16px);border-bottom:1px solid rgba(233,236,245,.8)}
-.nav{height:76px;display:flex;align-items:center;justify-content:space-between;gap:24px}
-.logo{display:flex;align-items:center;gap:10px;font-size:24px;font-weight:850;letter-spacing:-1px}
-.logo-mark{width:42px;height:42px;border-radius:13px;display:grid;place-items:center;background:linear-gradient(145deg,#ff5b5b,#d92727);box-shadow:0 7px 18px rgba(217,39,39,.22);font-size:25px}
-.logo span{color:#ef3737}.logo b{color:#17213b}
-.navlinks{display:flex;align-items:center;gap:28px;font-size:14px;font-weight:650;color:#30384e}
-.navlinks a:hover{color:var(--primary)}
-.nav-actions{display:flex;align-items:center;gap:10px}
-.icon-btn,.menu-btn{width:42px;height:42px;border:1px solid var(--line);background:white;border-radius:50%;cursor:pointer}
-.bookmark{border:0;background:linear-gradient(135deg,#6657f5,#7d54ef);color:white;border-radius:11px;padding:12px 16px;font-weight:750;cursor:pointer;box-shadow:0 9px 20px rgba(102,87,245,.22)}
-.menu-btn{display:none;border-radius:11px}
-
-/* Hero */
-.hero{position:relative;overflow:hidden;background:radial-gradient(circle at 80% 30%,#e7e1ff 0,#f5f4ff 28%,#fff 67%);padding:76px 0 48px}
-.hero:before{content:"";position:absolute;width:420px;height:420px;border-radius:50%;background:#d9d1ff;filter:blur(100px);opacity:.45;right:-120px;top:-100px}
-.hero-grid{position:relative;display:grid;grid-template-columns:1fr 1fr;align-items:center;gap:55px}
-.badge{display:inline-flex;padding:8px 13px;border:1px solid #e6e3fa;border-radius:999px;background:#fff;color:#5146c8;font-size:12px;font-weight:800;box-shadow:0 5px 20px rgba(50,45,100,.05)}
-h1{font-size:clamp(46px,6vw,74px);line-height:.98;letter-spacing:-4px;margin:22px 0 22px;font-weight:900}
-.gradient{background:linear-gradient(90deg,#6151ee,#9158ef);-webkit-background-clip:text;background-clip:text;color:transparent}
-.hero p{max-width:560px;color:var(--muted);font-size:17px;line-height:1.7;margin:0 0 28px}
-.searchbox{display:flex;max-width:610px;background:#fff;padding:7px;border:1px solid #e8e9f3;border-radius:15px;box-shadow:var(--shadow)}
-.searchbox input{min-width:0;flex:1;border:0;outline:0;padding:13px 14px;color:var(--text)}
-.searchbox button{border:0;border-radius:11px;background:linear-gradient(135deg,#6657f5,#7654ef);color:#fff;padding:0 27px;font-weight:800;cursor:pointer}
-.trending{display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin-top:15px;font-size:12px;color:#667085}
-.trending b{color:#30384e}
-.chip{padding:7px 10px;background:#fff;border:1px solid var(--line);border-radius:999px}
-.hero-art{min-height:430px;position:relative;display:grid;place-items:center}
-.window{width:min(510px,100%);background:rgba(255,255,255,.92);border:1px solid #e4e6f3;border-radius:25px;box-shadow:0 30px 80px rgba(83,67,176,.20);padding:18px;transform:rotate(1deg)}
-.dots{display:flex;gap:6px;margin-bottom:15px}.dot{width:8px;height:8px;border-radius:50%;background:#d5d7e4}
-.fake-search{height:45px;border:1px solid #e9eaf4;border-radius:12px;display:flex;align-items:center;padding:0 14px;color:#9aa1b3;font-size:13px;margin-bottom:15px}
-.tool-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
-.fake-card{height:105px;border-radius:16px;background:#f8f8fc;border:1px solid #ececf4;display:grid;place-items:center;position:relative}
-.fake-icon{width:48px;height:48px;border-radius:14px;display:grid;place-items:center;font-size:22px;background:#e8e5ff}
-.fake-card:nth-child(2) .fake-icon{background:#eee4ff}.fake-card:nth-child(3) .fake-icon{background:#ffe4e4}
-.floating{position:absolute;display:grid;place-items:center;width:65px;height:65px;border-radius:18px;background:#fff;box-shadow:var(--shadow);font-size:30px}
-.float-ai{right:-8px;top:28px;background:#8059f5;color:#fff}.float-pdf{right:15px;bottom:35px;background:#ff6d6d;color:#fff}.float-calc{left:5px;bottom:18px;background:#fff}
-
-/* Stats */
-.stats{margin-top:18px;background:#fff;border:1px solid var(--line);border-radius:20px;box-shadow:0 15px 45px rgba(30,35,70,.07);display:grid;grid-template-columns:repeat(4,1fr);padding:25px}
-.stat{display:flex;align-items:center;justify-content:center;gap:13px;border-right:1px solid var(--line)}
-.stat:last-child{border-right:0}
-.stat-icon{width:42px;height:42px;border-radius:50%;display:grid;place-items:center;background:#eeeaff;font-size:19px}
-.stat strong{display:block;font-size:21px}.stat small{color:var(--muted);font-size:12px}
-
-/* Sections */
-section{padding:76px 0}
-.section-title{text-align:center;margin-bottom:36px}
-.section-title h2{font-size:34px;letter-spacing:-1.5px;margin:0 0 9px}
-.section-title h2 span{color:var(--primary)}
-.section-title p{margin:0;color:var(--muted)}
-.categories{display:grid;grid-template-columns:repeat(6,1fr);gap:15px}
-.category,.tool-card{background:#fff;border:1px solid var(--line);border-radius:17px;padding:20px;transition:.25s;box-shadow:0 7px 25px rgba(30,35,70,.035)}
-.category:hover,.tool-card:hover{transform:translateY(-5px);box-shadow:0 17px 40px rgba(30,35,70,.10);border-color:#dcd9ff}
-.cat-icon{width:50px;height:50px;border-radius:14px;display:grid;place-items:center;font-size:23px;margin-bottom:16px;background:#ece9ff}
-.category:nth-child(2) .cat-icon{background:#e5f8e9}.category:nth-child(3) .cat-icon{background:#ffe8e8}
-.category:nth-child(4) .cat-icon{background:#eee6ff}.category:nth-child(5) .cat-icon{background:#fff0d9}.category:nth-child(6) .cat-icon{background:#e6efff}
-.category h3{margin:0 0 8px;font-size:15px}.category p{margin:0;color:var(--muted);font-size:11px;line-height:1.5}.category a{display:block;margin-top:15px;color:var(--primary);font-size:12px;font-weight:800}
-.tools-head{display:flex;justify-content:space-between;align-items:end;margin-bottom:24px}.tools-head h2{margin:0;font-size:30px}.view-all{color:var(--primary);font-weight:800;font-size:13px}
-.tool-grid-list{display:grid;grid-template-columns:repeat(6,1fr);gap:15px}
-.tool-card{text-align:center;padding:23px 15px}.tool-card .cat-icon{margin:0 auto 15px;width:46px;height:46px}.tool-card h3{font-size:14px;margin:0 0 8px}.tool-card p{font-size:11px;line-height:1.5;color:var(--muted);min-height:34px}.use{display:inline-block;margin-top:11px;color:var(--primary);font-size:12px;font-weight:850}
-
-/* CTA */
-.cta{padding:0 0 80px}.cta-box{border-radius:28px;padding:52px;text-align:center;background:linear-gradient(135deg,#f0edff,#f9f8ff);border:1px solid #e5e0ff}
-.cta-box h2{font-size:38px;letter-spacing:-1.5px;margin:0 0 12px}.cta-box p{color:var(--muted);margin:0 0 23px}.cta-btn{display:inline-block;background:#6657f5;color:#fff;padding:13px 22px;border-radius:11px;font-weight:800}
-
-/* Footer */
-footer{background:linear-gradient(135deg,#6159ec,#7668f5);color:#fff;padding:34px 0}
-.footer-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}.foot-item{display:flex;gap:13px;align-items:center}.foot-icon{width:42px;height:42px;border-radius:11px;background:rgba(255,255,255,.95);color:#6559ef;display:grid;place-items:center}.foot-item strong{display:block;font-size:13px}.foot-item small{opacity:.85;font-size:11px;line-height:1.4}
-.copyright{text-align:center;margin-top:30px;padding-top:20px;border-top:1px solid rgba(255,255,255,.18);font-size:12px;opacity:.8}
-
-/* Toast */
-.toast{position:fixed;bottom:25px;left:50%;transform:translate(-50%,20px);opacity:0;pointer-events:none;background:#151b31;color:white;padding:12px 17px;border-radius:12px;font-size:13px;transition:.3s;z-index:100}
-.toast.show{opacity:1;transform:translate(-50%,0)}
-
-/* Responsive */
-@media(max-width:1050px){
-  .navlinks{gap:16px}.categories{grid-template-columns:repeat(3,1fr)}.tool-grid-list{grid-template-columns:repeat(3,1fr)}
-}
-@media(max-width:800px){
-  .navlinks{display:none}.menu-btn{display:block}.hero{padding-top:48px}.hero-grid{grid-template-columns:1fr;gap:35px}.hero-art{min-height:330px}.stats{grid-template-columns:repeat(2,1fr);gap:18px}.stat{border-right:0}.categories{grid-template-columns:repeat(2,1fr)}
-}
-@media(max-width:520px){
-  .nav{height:68px}.logo{font-size:20px}.logo-mark{width:36px;height:36px}.bookmark{display:none}
-  h1{font-size:47px;letter-spacing:-2.8px}.hero p{font-size:15px}.searchbox button{padding:0 17px}
-  .stats{padding:18px}.stat strong{font-size:17px}.stat small{font-size:10px}
-  section{padding:55px 0}.section-title h2{font-size:28px}.categories,.tool-grid-list{grid-template-columns:1fr 1fr}
-  .tools-head h2{font-size:25px}.cta-box{padding:35px 20px}.cta-box h2{font-size:29px}.footer-grid{grid-template-columns:1fr 1fr}
-  .window{padding:12px}.fake-card{height:78px}.fake-icon{width:38px;height:38px}.floating{width:50px;height:50px;font-size:22px}
-}
-</style>
-</head>
-<body>
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#050507"><title>ToolTomato — Free Tools For Everyday Problems</title><style>
+:root{--bg:#050507;--card:#101017;--text:#f7f7fb;--muted:#687086;--line:#24252e;--p:#7770ff;--o:#ff822b}*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--text);font-family:Inter,system-ui,sans-serif}a{text-decoration:none;color:inherit}.wrap{width:min(1180px,calc(100% - 48px));margin:auto}header{height:78px;border-bottom:1px solid #191a22;background:#07070bd9;backdrop-filter:blur(16px);position:sticky;top:0;z-index:5}.nav{height:100%;display:flex;align-items:center;justify-content:space-between}.logo{display:flex;align-items:center;gap:10px;font-size:23px;font-weight:900}.mark{width:43px;height:43px;border-radius:13px;display:grid;place-items:center;background:linear-gradient(135deg,#8c55ff,#ed5988);font-size:22px}.logo b{color:#fff}.logo span{color:#ff7926}.links{display:flex;gap:28px;color:#969dad;font-size:13px}.links a:hover{color:#fff}.hero{text-align:center;padding:88px 0 72px;position:relative;overflow:hidden}.hero:before{content:"";position:absolute;width:520px;height:300px;background:#6630ff25;filter:blur(100px);top:-100px;left:50%;transform:translateX(-50%)}.pill{position:relative;display:inline-block;border:1px solid #2a2a31;background:#111116;border-radius:99px;padding:9px 16px;color:#aeb2c0;font-size:12px;letter-spacing:1px}.pill b{color:#ff8b32}h1{position:relative;font-size:clamp(46px,7vw,78px);line-height:.98;letter-spacing:-4px;margin:27px 0 20px}.grad{background:linear-gradient(90deg,#ff8b2c,#ff635f,#c85cff);-webkit-background-clip:text;background-clip:text;color:transparent}.hero p{position:relative;color:#747b8d;max-width:700px;margin:0 auto 35px;font-size:17px;line-height:1.65}.search{position:relative;max-width:680px;margin:auto;display:flex;align-items:center;background:#0f1017;border:1px solid #272833;border-radius:99px;padding:6px 7px 6px 20px}.search i{font-size:22px;color:#7f8799}.search input{flex:1;min-width:0;background:none;border:0;outline:0;color:#fff;padding:13px;font-size:15px}.search button{border:0;border-radius:99px;background:linear-gradient(135deg,#7169ff,#8b55ff);color:#fff;padding:12px 22px;font-weight:800}.section{padding:64px 0}.kicker{color:#8a83ff;letter-spacing:4px;font-size:12px;font-weight:900}.orange{color:#ff7d2a}.title{font-size:34px;letter-spacing:-1.5px;margin:10px 0 32px}.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}.card{min-height:270px;background:linear-gradient(145deg,#111118,#0e0f15);border:1px solid #24252e;border-radius:24px;padding:37px;position:relative;transition:.25s}.card:hover{transform:translateY(-5px);border-color:#454755;box-shadow:0 25px 70px #0008}.card:after{content:"↗";position:absolute;right:30px;top:26px;color:#59667c;font-size:22px}.icon{width:73px;height:73px;border-radius:18px;display:grid;place-items:center;font-size:30px;color:#8c84ff;background:#18182d;margin-bottom:43px}.oi{color:#ff8c3d;background:#2a1b17}.card h3{font-size:25px;letter-spacing:-.8px;margin:0 0 10px}.card p{font-size:17px;line-height:1.5;color:#657087;margin:0}.featured{border-color:#70411f;box-shadow:0 15px 60px #8c3d1115}.category .card{min-height:315px}.category .card h3{font-size:29px}.soon{font-size:10px;color:#626879;border:1px solid #2b2d37;border-radius:99px;padding:5px 8px;vertical-align:middle}.footer{border-top:1px solid #191a22;text-align:center;padding:60px 0;color:#5e6677}.footer b{color:#ff7d2a}.toast{position:fixed;bottom:24px;left:50%;transform:translate(-50%,20px);opacity:0;background:#fff;color:#111;padding:12px 18px;border-radius:12px;font-weight:800;font-size:13px;transition:.25s}.toast.show{opacity:1;transform:translate(-50%,0)}@media(max-width:800px){.wrap{width:calc(100% - 50px)}.links{display:none}.hero{padding:70px 0 50px}h1{font-size:48px;letter-spacing:-2.8px}.hero p{font-size:15px}.search button{display:none}.grid{grid-template-columns:1fr}.card{min-height:270px}.category .card{min-height:300px}.section{padding:55px 0}}@media(max-width:480px){header{height:68px}.logo{font-size:21px}.mark{width:39px;height:39px}.hero{padding-top:65px}.pill{font-size:10px}h1{font-size:45px}.title{font-size:30px}.card{border-radius:23px}}
+</style></head><body>
+<header><div class="wrap nav"><a class="logo" href="#"><span class="mark">✦</span><b>TOOL<span>BHARAT</span></b></a><nav class="links"><a href="#home">Home</a><a href="#tools">Tools</a><a href="#categories">Categories</a><a href="#about">About</a></nav></div></header>
+<main id="home"><section class="hero"><div class="wrap"><div class="pill">✦ &nbsp; <b>12+ FREE TOOLS</b> &nbsp;·&nbsp; NO LOGIN &nbsp;·&nbsp; NO LIMITS</div><h1>Free Tools For<br><span class="grad">Everyday Problems</span></h1><p>Calculators, AI writers, image generators — designed for Bharat. Fast, free, forever.</p><div class="search"><i>⌕</i><input id="q" placeholder="Search a tool... e.g. EMI, GST, BMI"><button onclick="go()">Search</button></div></div></section>
+<section class="section" id="tools"><div class="wrap"><div class="kicker orange">🔥 POPULAR</div><h2 class="title">Popular Tools</h2><div class="grid"><article class="card featured" data-n="emi"><div class="icon oi">▣</div><h3>EMI Calculator</h3><p>Calculate your monthly loan EMI with amortization chart.</p></article><article class="card" data-n="age"><div class="icon">▦</div><h3>Age Calculator</h3><p>Find your exact age in years, months, days.</p></article><article class="card" data-n="gst"><div class="icon oi">₹</div><h3>GST Calculator</h3><p>Compute GST inclusive/exclusive amounts instantly.</p></article><article class="card" data-n="percentage"><div class="icon">%</div><h3>Percentage Calculator</h3><p>Percentage of, increase/decrease, and reverse calc.</p></article></div></div></section>
+<section class="section" id="categories"><div class="wrap"><div class="kicker">EXPLORE BY CATEGORY</div><h2 class="title">All Tool Categories</h2><div class="grid category"><article class="card"><div class="icon oi">▣</div><h3>Calculators</h3><p>Numbers made simple</p></article><article class="card"><div class="icon">▧</div><h3>Image Tools <small class="soon">🔒 SOON</small></h3><p>Compress, resize, convert</p></article><article class="card"><div class="icon oi">▤</div><h3>PDF Tools <small class="soon">🔒 SOON</small></h3><p>Merge, split, compress</p></article><article class="card"><div class="icon">⌁</div><h3>Education Tools <small class="soon">🔒 SOON</small></h3><p>Study smarter, calculate faster</p></article><article class="card"><div class="icon oi">✦</div><h3>AI Tools <small class="soon">🔒 SOON</small></h3><p>Write, generate, create</p></article><article class="card"><div class="icon">↔</div><h3>Converters <small class="soon">🔒 SOON</small></h3><p>Units, currency, data and more</p></article></div></div></section>
+<section class="section" id="all"><div class="wrap"><div class="kicker orange">EVERY TOOL</div><h2 class="title">All 12 tools, one grid</h2><div class="grid" id="allgrid"><article class="card" data-n="emi"><div class="icon oi">▣</div><h3>EMI Calculator</h3><p>Calculate your monthly loan EMI with amortization chart.</p></article><article class="card" data-n="age"><div class="icon">▦</div><h3>Age Calculator</h3><p>Find your exact age in years, months, days.</p></article><article class="card" data-n="gst"><div class="icon oi">₹</div><h3>GST Calculator</h3><p>Compute GST inclusive/exclusive amounts instantly.</p></article><article class="card" data-n="percentage"><div class="icon">%</div><h3>Percentage Calculator</h3><p>Percentage of, increase/decrease, and reverse calc.</p></article><article class="card" data-n="unit"><div class="icon">⌁</div><h3>Unit Converter</h3><p>Convert length, weight, temperature and more.</p></article><article class="card" data-n="ai text"><div class="icon oi">✎</div><h3>AI Text Writer</h3><p>Blogs, captions, emails — generated in seconds.</p></article><article class="card" data-n="ai image"><div class="icon">▧</div><h3>AI Image Generator</h3><p>Turn any prompt into a stunning AI image.</p></article><article class="card" data-n="bmi"><div class="icon oi">♡</div><h3>BMI Calculator</h3><p>Check your Body Mass Index and health category.</p></article><article class="card" data-n="loan"><div class="icon">♜</div><h3>Loan Calculator</h3><p>Total interest and payment schedule for any loan.</p></article><article class="card" data-n="sip"><div class="icon oi">↗</div><h3>SIP Calculator</h3><p>Estimate mutual fund SIP returns over time.</p></article><article class="card" data-n="date"><div class="icon">▦</div><h3>Date Calculator</h3><p>Days between dates, add/subtract days.</p></article><article class="card" data-n="discount"><div class="icon oi">%</div><h3>Discount Calculator</h3><p>Sale price after discount % or flat off.</p></article></div></div></section></main>
+<footer class="footer" id="about">TOOL<b>BHARAT</b><br><small>Free tools for everyday problems · Built for everyone</small></footer><div class="toast" id="toast"></div><script>function toast(x){let t=document.getElementById('toast');t.textContent=x;t.classList.add('show');clearTimeout(window.x);window.x=setTimeout(()=>t.classList.remove('show'),2200)}function go(){let q=document.getElementById('q').value.toLowerCase().trim();if(!q){toast('Type EMI, GST, BMI or another tool');return}let a=[...document.querySelectorAll('#allgrid .card')],f=a.find(x=>(x.dataset.n||'').includes(q));document.getElementById('all').scrollIntoView({behavior:'smooth'});setTimeout(()=>{a.forEach(x=>x.style.outline='');if(f){f.style.outline='2px solid #ff7d2a';toast('Found: '+f.querySelector('h3').textContent)}else toast('No matching tool yet')},500)}</script></body></html>
 
 <header>
   <div class="container nav">
