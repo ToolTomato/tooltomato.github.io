@@ -1,115 +1,12 @@
 <!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#050507"><title>ToolTomato — Free Tools For Everyday Problems</title><style>
 :root{--bg:#050507;--card:#101017;--text:#f7f7fb;--muted:#687086;--line:#24252e;--p:#7770ff;--o:#ff822b}*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--text);font-family:Inter,system-ui,sans-serif}a{text-decoration:none;color:inherit}.wrap{width:min(1180px,calc(100% - 48px));margin:auto}header{height:78px;border-bottom:1px solid #191a22;background:#07070bd9;backdrop-filter:blur(16px);position:sticky;top:0;z-index:5}.nav{height:100%;display:flex;align-items:center;justify-content:space-between}.logo{display:flex;align-items:center;gap:10px;font-size:23px;font-weight:900}.mark{width:43px;height:43px;border-radius:13px;display:grid;place-items:center;background:linear-gradient(135deg,#8c55ff,#ed5988);font-size:22px}.logo b{color:#fff}.logo span{color:#ff7926}.links{display:flex;gap:28px;color:#969dad;font-size:13px}.links a:hover{color:#fff}.hero{text-align:center;padding:88px 0 72px;position:relative;overflow:hidden}.hero:before{content:"";position:absolute;width:520px;height:300px;background:#6630ff25;filter:blur(100px);top:-100px;left:50%;transform:translateX(-50%)}.pill{position:relative;display:inline-block;border:1px solid #2a2a31;background:#111116;border-radius:99px;padding:9px 16px;color:#aeb2c0;font-size:12px;letter-spacing:1px}.pill b{color:#ff8b32}h1{position:relative;font-size:clamp(46px,7vw,78px);line-height:.98;letter-spacing:-4px;margin:27px 0 20px}.grad{background:linear-gradient(90deg,#ff8b2c,#ff635f,#c85cff);-webkit-background-clip:text;background-clip:text;color:transparent}.hero p{position:relative;color:#747b8d;max-width:700px;margin:0 auto 35px;font-size:17px;line-height:1.65}.search{position:relative;max-width:680px;margin:auto;display:flex;align-items:center;background:#0f1017;border:1px solid #272833;border-radius:99px;padding:6px 7px 6px 20px}.search i{font-size:22px;color:#7f8799}.search input{flex:1;min-width:0;background:none;border:0;outline:0;color:#fff;padding:13px;font-size:15px}.search button{border:0;border-radius:99px;background:linear-gradient(135deg,#7169ff,#8b55ff);color:#fff;padding:12px 22px;font-weight:800}.section{padding:64px 0}.kicker{color:#8a83ff;letter-spacing:4px;font-size:12px;font-weight:900}.orange{color:#ff7d2a}.title{font-size:34px;letter-spacing:-1.5px;margin:10px 0 32px}.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}.card{min-height:270px;background:linear-gradient(145deg,#111118,#0e0f15);border:1px solid #24252e;border-radius:24px;padding:37px;position:relative;transition:.25s}.card:hover{transform:translateY(-5px);border-color:#454755;box-shadow:0 25px 70px #0008}.card:after{content:"↗";position:absolute;right:30px;top:26px;color:#59667c;font-size:22px}.icon{width:73px;height:73px;border-radius:18px;display:grid;place-items:center;font-size:30px;color:#8c84ff;background:#18182d;margin-bottom:43px}.oi{color:#ff8c3d;background:#2a1b17}.card h3{font-size:25px;letter-spacing:-.8px;margin:0 0 10px}.card p{font-size:17px;line-height:1.5;color:#657087;margin:0}.featured{border-color:#70411f;box-shadow:0 15px 60px #8c3d1115}.category .card{min-height:315px}.category .card h3{font-size:29px}.soon{font-size:10px;color:#626879;border:1px solid #2b2d37;border-radius:99px;padding:5px 8px;vertical-align:middle}.footer{border-top:1px solid #191a22;text-align:center;padding:60px 0;color:#5e6677}.footer b{color:#ff7d2a}.toast{position:fixed;bottom:24px;left:50%;transform:translate(-50%,20px);opacity:0;background:#fff;color:#111;padding:12px 18px;border-radius:12px;font-weight:800;font-size:13px;transition:.25s}.toast.show{opacity:1;transform:translate(-50%,0)}@media(max-width:800px){.wrap{width:calc(100% - 50px)}.links{display:none}.hero{padding:70px 0 50px}h1{font-size:48px;letter-spacing:-2.8px}.hero p{font-size:15px}.search button{display:none}.grid{grid-template-columns:1fr}.card{min-height:270px}.category .card{min-height:300px}.section{padding:55px 0}}@media(max-width:480px){header{height:68px}.logo{font-size:21px}.mark{width:39px;height:39px}.hero{padding-top:65px}.pill{font-size:10px}h1{font-size:45px}.title{font-size:30px}.card{border-radius:23px}}
 </style></head><body>
-<header><div class="wrap nav"><a class="logo" href="#"><span class="mark">✦</span><b>TOOL<span>BHARAT</span></b></a><nav class="links"><a href="#home">Home</a><a href="#tools">Tools</a><a href="#categories">Categories</a><a href="#about">About</a></nav></div></header>
+<header><div class="wrap nav"><a class="logo" href="#"><span class="mark">✦</span><b>TOOL<span>TOMATO</span></b></a><nav class="links"><a href="#home">Home</a><a href="#tools">Tools</a><a href="#categories">Categories</a><a href="#about">About</a></nav></div></header>
 <main id="home"><section class="hero"><div class="wrap"><div class="pill">✦ &nbsp; <b>12+ FREE TOOLS</b> &nbsp;·&nbsp; NO LOGIN &nbsp;·&nbsp; NO LIMITS</div><h1>Free Tools For<br><span class="grad">Everyday Problems</span></h1><p>Calculators, AI writers, image generators — designed for Bharat. Fast, free, forever.</p><div class="search"><i>⌕</i><input id="q" placeholder="Search a tool... e.g. EMI, GST, BMI"><button onclick="go()">Search</button></div></div></section>
 <section class="section" id="tools"><div class="wrap"><div class="kicker orange">🔥 POPULAR</div><h2 class="title">Popular Tools</h2><div class="grid"><article class="card featured" data-n="emi"><div class="icon oi">▣</div><h3>EMI Calculator</h3><p>Calculate your monthly loan EMI with amortization chart.</p></article><article class="card" data-n="age"><div class="icon">▦</div><h3>Age Calculator</h3><p>Find your exact age in years, months, days.</p></article><article class="card" data-n="gst"><div class="icon oi">₹</div><h3>GST Calculator</h3><p>Compute GST inclusive/exclusive amounts instantly.</p></article><article class="card" data-n="percentage"><div class="icon">%</div><h3>Percentage Calculator</h3><p>Percentage of, increase/decrease, and reverse calc.</p></article></div></div></section>
 <section class="section" id="categories"><div class="wrap"><div class="kicker">EXPLORE BY CATEGORY</div><h2 class="title">All Tool Categories</h2><div class="grid category"><article class="card"><div class="icon oi">▣</div><h3>Calculators</h3><p>Numbers made simple</p></article><article class="card"><div class="icon">▧</div><h3>Image Tools <small class="soon">🔒 SOON</small></h3><p>Compress, resize, convert</p></article><article class="card"><div class="icon oi">▤</div><h3>PDF Tools <small class="soon">🔒 SOON</small></h3><p>Merge, split, compress</p></article><article class="card"><div class="icon">⌁</div><h3>Education Tools <small class="soon">🔒 SOON</small></h3><p>Study smarter, calculate faster</p></article><article class="card"><div class="icon oi">✦</div><h3>AI Tools <small class="soon">🔒 SOON</small></h3><p>Write, generate, create</p></article><article class="card"><div class="icon">↔</div><h3>Converters <small class="soon">🔒 SOON</small></h3><p>Units, currency, data and more</p></article></div></div></section>
 <section class="section" id="all"><div class="wrap"><div class="kicker orange">EVERY TOOL</div><h2 class="title">All 12 tools, one grid</h2><div class="grid" id="allgrid"><article class="card" data-n="emi"><div class="icon oi">▣</div><h3>EMI Calculator</h3><p>Calculate your monthly loan EMI with amortization chart.</p></article><article class="card" data-n="age"><div class="icon">▦</div><h3>Age Calculator</h3><p>Find your exact age in years, months, days.</p></article><article class="card" data-n="gst"><div class="icon oi">₹</div><h3>GST Calculator</h3><p>Compute GST inclusive/exclusive amounts instantly.</p></article><article class="card" data-n="percentage"><div class="icon">%</div><h3>Percentage Calculator</h3><p>Percentage of, increase/decrease, and reverse calc.</p></article><article class="card" data-n="unit"><div class="icon">⌁</div><h3>Unit Converter</h3><p>Convert length, weight, temperature and more.</p></article><article class="card" data-n="ai text"><div class="icon oi">✎</div><h3>AI Text Writer</h3><p>Blogs, captions, emails — generated in seconds.</p></article><article class="card" data-n="ai image"><div class="icon">▧</div><h3>AI Image Generator</h3><p>Turn any prompt into a stunning AI image.</p></article><article class="card" data-n="bmi"><div class="icon oi">♡</div><h3>BMI Calculator</h3><p>Check your Body Mass Index and health category.</p></article><article class="card" data-n="loan"><div class="icon">♜</div><h3>Loan Calculator</h3><p>Total interest and payment schedule for any loan.</p></article><article class="card" data-n="sip"><div class="icon oi">↗</div><h3>SIP Calculator</h3><p>Estimate mutual fund SIP returns over time.</p></article><article class="card" data-n="date"><div class="icon">▦</div><h3>Date Calculator</h3><p>Days between dates, add/subtract days.</p></article><article class="card" data-n="discount"><div class="icon oi">%</div><h3>Discount Calculator</h3><p>Sale price after discount % or flat off.</p></article></div></div></section></main>
-<footer class="footer" id="about">TOOL<b>BHARAT</b><br><small>Free tools for everyday problems · Built for everyone</small></footer><div class="toast" id="toast"></div><script>function toast(x){let t=document.getElementById('toast');t.textContent=x;t.classList.add('show');clearTimeout(window.x);window.x=setTimeout(()=>t.classList.remove('show'),2200)}function go(){let q=document.getElementById('q').value.toLowerCase().trim();if(!q){toast('Type EMI, GST, BMI or another tool');return}let a=[...document.querySelectorAll('#allgrid .card')],f=a.find(x=>(x.dataset.n||'').includes(q));document.getElementById('all').scrollIntoView({behavior:'smooth'});setTimeout(()=>{a.forEach(x=>x.style.outline='');if(f){f.style.outline='2px solid #ff7d2a';toast('Found: '+f.querySelector('h3').textContent)}else toast('No matching tool yet')},500)}</script></body></html>
-
-<header>
-  <div class="container nav">
-    <a href="#" class="logo"><span class="logo-mark">🍅</span><span><b>Tool</b>Tomato</span></a>
-    <nav class="navlinks">
-      <a href="#home">Home</a><a href="#categories">Categories</a><a href="#tools">Calculators</a><a href="#tools">AI Tools</a><a href="#tools">PDF Tools</a><a href="#tools">Blog</a><a href="#about">About</a>
-    </nav>
-    <div class="nav-actions">
-      <button class="icon-btn" id="themeBtn" aria-label="Toggle theme">◐</button>
-      <button class="bookmark" onclick="showToast('ToolTamato bookmarked!')">★ Bookmark Us</button>
-      <button class="menu-btn" onclick="showToast('Menu coming next!')">☰</button>
-    </div>
-  </div>
-</header>
-
-<main id="home">
-<section class="hero">
-  <div class="container hero-grid">
-    <div>
-      <span class="badge">✓ 100% Free &nbsp;•&nbsp; Fast &nbsp;•&nbsp; Secure &nbsp;•&nbsp; No Sign Up</span>
-      <h1>One Place.<br><span class="gradient">Every Tool.</span></h1>
-      <p>Smart, fast and easy-to-use tools for your everyday problems. Calculators, converters, AI tools and more — all designed to give you instant results.</p>
-      <div class="searchbox">
-        <input id="toolSearch" type="search" placeholder="Search any tool you need..." oninput="filterTools(this.value)">
-        <button onclick="runSearch()">Search</button>
-      </div>
-      <div class="trending"><b>Trending:</b><span class="chip">EMI Calculator</span><span class="chip">Salary Calculator</span><span class="chip">Image Compressor</span><span class="chip">Age Calculator</span></div>
-    </div>
-    <div class="hero-art" aria-hidden="true">
-      <div class="window">
-        <div class="dots"><i class="dot"></i><i class="dot"></i><i class="dot"></i></div>
-        <div class="fake-search">⌕ &nbsp; Search any tool...</div>
-        <div class="tool-grid">
-          <div class="fake-card"><div class="fake-icon">▦</div></div>
-          <div class="fake-card"><div class="fake-icon">✦</div></div>
-          <div class="fake-card"><div class="fake-icon">PDF</div></div>
-          <div class="fake-card"><div class="fake-icon">◔</div></div>
-          <div class="fake-card"><div class="fake-icon">⌁</div></div>
-          <div class="fake-card"><div class="fake-icon">⚙</div></div>
-        </div>
-      </div>
-      <div class="floating float-ai">AI</div><div class="floating float-pdf">PDF</div><div class="floating float-calc">▦</div>
-    </div>
-  </div>
-  <div class="container">
-    <div class="stats">
-      <div class="stat"><div class="stat-icon">🚀</div><div><strong>500+</strong><small>Powerful Tools</small></div></div>
-      <div class="stat"><div class="stat-icon">👥</div><div><strong>10M+</strong><small>Happy Users</small></div></div>
-      <div class="stat"><div class="stat-icon">⚡</div><div><strong>Instant</strong><small>Results</small></div></div>
-      <div class="stat"><div class="stat-icon">🛡️</div><div><strong>100%</strong><small>Secure & Free</small></div></div>
-    </div>
-  </div>
-</section>
-
-<section id="categories">
-  <div class="container">
-    <div class="section-title"><h2>Explore By <span>Categories</span></h2><p>Everything you need, organized in one simple place.</p></div>
-    <div class="categories">
-      <div class="category"><div class="cat-icon">▦</div><h3>Calculators</h3><p>Finance, Health, Age, Math & More</p><a href="#tools">120+ Tools →</a></div>
-      <div class="category"><div class="cat-icon">▧</div><h3>Image Tools</h3><p>Compress, Convert, Resize & More</p><a href="#tools">80+ Tools →</a></div>
-      <div class="category"><div class="cat-icon">PDF</div><h3>PDF Tools</h3><p>Convert, Merge, Split, Compress PDF</p><a href="#tools">50+ Tools →</a></div>
-      <div class="category"><div class="cat-icon">✦</div><h3>AI Tools</h3><p>Write, Generate, Convert, Improve with AI</p><a href="#tools">50+ Tools →</a></div>
-      <div class="category"><div class="cat-icon">↔</div><h3>Converters</h3><p>Unit, Currency, Time, Data & More</p><a href="#tools">60+ Tools →</a></div>
-      <div class="category"><div class="cat-icon">◎</div><h3>Web Tools</h3><p>SEO, Domain, Speed, Text & More</p><a href="#tools">40+ Tools →</a></div>
-    </div>
-  </div>
-</section>
-
-<section id="tools">
-  <div class="container">
-    <div class="tools-head"><h2>Popular Tools</h2><a class="view-all" href="#" onclick="showToast('More tools will be added here.');return false">View All Tools →</a></div>
-    <div class="tool-grid-list" id="toolList">
-      <div class="tool-card" data-name="emi calculator"><div class="cat-icon">▣</div><h3>EMI Calculator</h3><p>Calculate your EMI instantly</p><a class="use" href="#" onclick="showToast('EMI Calculator selected');return false">Use Now →</a></div>
-      <div class="tool-card" data-name="salary calculator"><div class="cat-icon">▰</div><h3>Salary Calculator</h3><p>Calculate in-hand salary after tax</p><a class="use" href="#" onclick="showToast('Salary Calculator selected');return false">Use Now →</a></div>
-      <div class="tool-card" data-name="age calculator"><div class="cat-icon">▣</div><h3>Age Calculator</h3><p>Find age in years, months and days</p><a class="use" href="#" onclick="showToast('Age Calculator selected');return false">Use Now →</a></div>
-      <div class="tool-card" data-name="image compressor"><div class="cat-icon">▧</div><h3>Image Compressor</h3><p>Compress JPG and PNG images</p><a class="use" href="#" onclick="showToast('Image Compressor selected');return false">Use Now →</a></div>
-      <div class="tool-card" data-name="pdf to word"><div class="cat-icon">PDF</div><h3>PDF to Word</h3><p>Convert PDF files to editable Word</p><a class="use" href="#" onclick="showToast('PDF to Word selected');return false">Use Now →</a></div>
-      <div class="tool-card" data-name="percentage calculator"><div class="cat-icon">%</div><h3>Percentage Calculator</h3><p>Calculate percentage easily</p><a class="use" href="#" onclick="showToast('Percentage Calculator selected');return false">Use Now →</a></div>
-    </div>
-  </div>
-</section>
-
-<section id="about" class="cta">
-  <div class="container"><div class="cta-box"><h2>Ready to get things done?</h2><p>Find a tool, solve your problem and move on — no complicated setup.</p><a class="cta-btn" href="#tools">Explore Tools →</a></div></div>
-</section>
-</main>
-
-<footer>
-  <div class="container">
-    <div class="footer-grid">
-      <div class="foot-item"><div class="foot-icon">👤</div><div><strong>No Sign Up</strong><small>Use tools instantly without registration</small></div></div>
-      <div class="foot-item"><div class="foot-icon">▣</div><div><strong>Mobile Friendly</strong><small>Works smoothly on phone & tablet</small></div></div>
-      <div class="foot-item"><div class="foot-icon">⚡</div><div><strong>Lightning Fast</strong><small>Get results in real-time</small></div></div>
-      <div class="foot-item"><div class="foot-icon">🛡</div><div><strong>Privacy First</strong><small>Your data stays safe with us</small></div></div>
-    </div>
-    <div class="copyright">© 2026 ToolTamato. Built for everyday problems.</div>
-  </div>
-</footer>
-
-<div class="toast" id="toast"></div>
-<script>
-function showToast(msg){
-  const t=document.getElementById('toast'); t.textContent=msg; t.classList.add('show');
+<footer class="footer" id="about">TOOL<b>TOMATO</b><br><small>Free tools for everyday problems · Built for everyone</small></footer><div class="toast" id="toast"></div><script>function toast(x){let t=document.getElementById('toast');t.textContent=x;t.classList.add('show');clearTimeout(window.x);window.x=setTimeout(()=>t.classList.remove('show'),2200)}function go(){let q=document.getElementById('q').value.toLowerCase().trim();if(!q){toast('Type EMI, GST, BMI or another tool');return}let a=[...document.querySelectorAll('#allgrid .card')],f=a.find(x=>(x.dataset.n||'').includes(q));document.getElementById('all').scrollIntoView({behavior:'smooth'});setTimeout(()=>{a.forEach(x=>x.style.outline='');if(f){f.style.outline='2px solid #ff7d2a';toast('Found: '+f.querySelector('h3').textContent)}else toast('No matching tool yet')},500)}</script></body></html>
   clearTimeout(window.toastTimer); window.toastTimer=setTimeout(()=>t.classList.remove('show'),2200);
 }
 function runSearch(){
